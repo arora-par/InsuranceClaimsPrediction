@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Mar 27 21:05:27 EDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0153-bac1-0e45-0000348fe7b0 
+on database directory /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@64ff0eaa 
+Loaded from file:/Users/tanya/Downloads/spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.4
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

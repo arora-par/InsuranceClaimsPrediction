@@ -21,9 +21,10 @@ libraryDependencies ++= Seq(
 	"org.scalatest" %% "scalatest" % scalaTestVersion % "test",
 	
 	// spark core
-	  "org.apache.spark" %% "spark-core" % "1.6.1"
-	  //"org.apache.spark" %% "spark-mllib_2.10" % "1.5.1",
+	  "org.apache.spark" %% "spark-core" % "1.6.1",
+	  "org.apache.spark" %% "spark-sql" % "1.6.1",
+	  "org.apache.spark" %% "spark-mllib" % "1.6.1",
 	  // spark packages
-	  //"com.databricks" %% "spark-csv_2.10" % "1.2.0"
+	  "com.databricks" %% "spark-csv" % "1.4.0"
 )
 

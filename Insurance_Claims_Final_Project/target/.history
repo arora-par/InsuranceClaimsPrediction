@@ -6,3 +6,9 @@ eclipse
 last *:update
 eclipse
 package
+eclipse
+compile
+clean
+compile
+package 
+exit
