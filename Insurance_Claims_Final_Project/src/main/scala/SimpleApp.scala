@@ -10,6 +10,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types.{StructType, StructField, DoubleType, IntegerType, StringType};
 import org.apache.spark.sql.Row
+
 object SimpleApp {
   def main(args: Array[String]) {
     val logFile = "/Users/tanya/downloads/train.csv" // Should be some file on your system
@@ -161,7 +162,7 @@ object SimpleApp {
     .load("/Users/tanya/downloads/train.csv")
     
     val selectedData = df.select("target", "v10", "v12","v14","v21","v34","v40","v50","v62","v72","v114","v129").rdd;
-    selectedData.collect().foreach{ println(_) }
+    //selectedData.collect().foreach{ println(_) }
     
     val data = for{
       dataRow <- selectedData
@@ -175,19 +176,40 @@ object SimpleApp {
     
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
-      .setNumClasses(10)
+      .setNumClasses(2)
       .run(training)
     
     // Compute raw scores on the test set.
     val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
-      val prediction = model.predict(features)
+      val prediction = model.clearThreshold().predict(features)
       (prediction, label)
     }
+   
     
-    // Get evaluation metrics.
+    // competition - evaluation 
+   //lazy val loglossRDD = for(pair<-predictionAndLabels)yield(calculateErrorFactor(pair._1,pair._2))
+   
+    
+    predictionAndLabels.collect().foreach (println((_)))
+
+  val loss= for{
+  pair <-predictionAndLabels
+  error = calculateErrorFactor(pair._1,pair._2)} yield error
+   println("************************")
+   //loss.foreach (println(_))
+    
+   val logloss = loss.collect().toSeq.reduce(_+_)
+   
+    
+    
+    // scala class evaluation Get evaluation metrics.
     val metrics = new MulticlassMetrics(predictionAndLabels)
     val precision = metrics.precision
+    val recall= metrics.recall
     println("Precision = " + precision)
+    println("Recall ="+recall)
+   
+   println("logloss=" + (logloss/loss.count * (-1)) )
     
     // Save and load model
     /*model.save(sc, "myModelPath")
@@ -202,9 +224,10 @@ object SimpleApp {
     seqDouble.toArray
   }
   
-//   def logLoss(n: Int, y: Int[], p:Int[]) : Double={
-//    for(i <- 1 to n ) yield { yi*Math.log10(pi)+ (1-yi)*Math.log10(1-pi) }
-//  }
+   def calculateErrorFactor(pi:Double, yi: Double) : Double={
+     yi*Math.log10(pi) + (1-yi)*Math.log10(1-pi) 
+    }
+   
   
-  
+
 }
