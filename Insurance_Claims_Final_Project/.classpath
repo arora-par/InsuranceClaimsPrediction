@@ -1,5 +1,6 @@
 <classpath>
   <classpathentry kind="src" path="src/main/scala"/>
+  <classpathentry kind="src" path="src/main/resources"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
   <classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.spire-math/spire_2.10/jars/spire_2.10-0.10.1.jar"/>
   <classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.spire-math/spire-macros_2.10/jars/spire-macros_2.10-0.10.1.jar"/>
