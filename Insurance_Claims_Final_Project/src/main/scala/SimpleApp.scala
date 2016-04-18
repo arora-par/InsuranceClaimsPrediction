@@ -1,15 +1,18 @@
 
 package claims
+import scala.util._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.classification.{ LogisticRegressionWithLBFGS, LogisticRegressionModel }
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
+import org.apache.spark.mllib.feature.PCA
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types.{ StructType, StructField, DoubleType, IntegerType, StringType };
 import org.apache.spark.sql.Row
+import org.apache.spark.sql.DataFrame
 
 object SimpleApp {
   def main(args: Array[String]) {
@@ -159,39 +162,68 @@ object SimpleApp {
       .schema(customSchema)
       .load(args(0))
 
-    val selectedData = df.select("target", "v10", "v12", "v14", "v21", "v34", "v40", "v50", "v62", "v72", "v114", "v129").rdd;
-    //selectedData.collect().foreach{ println(_) }
+    val selectedData = df.select("target", "v1", "v2", "v4", "v5", "v6", "v7", "v8", "v9", "v10",
+      "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20",
+      "v21", "v25", "v26", "v27", "v28", "v29",
+      "v32", "v34", "v33", "v35", "v36", "v37", "v38", "v39", "v40",
+      "v41", "v42", "v43", "v44", "v45", "v46", "v48", "v49", "v50",
+      "v51", "v53", "v54", "v55", "v57", "v58", "v59", "v60",
+      "v61", "v62", "v64", "v65", "v63", "v67", "v68", "v69", "v70",
+      "v72", "v73", "v76", "v77", "v78", "v80",
+      "v81", "v83", "v82", "v84", "v85", "v86", "v87", "v88", "v89", "v90",
+      "v93", "v92", "v94", "v95", "v96", "v97", "v98", "v99", "v100",
+      "v101", "v102", "v104", "v105", "v106", "v103", "v108", "v109",
+      "v111", "v114", "v115", "v116", "v117", "v118", "v119", "v120",
+      "v121", "v122", "v123", "v124", "v126", "v127", "v128", "v129", "v130", "v131").rdd;
 
-    val data = for {
+     val data = for {
       dataRow <- selectedData
       rowSeq = dataRow.toSeq
     } yield { LabeledPoint(rowSeq.head.asInstanceOf[Double], Vectors.dense(convertToArray(rowSeq.tail))) }
+    
+    val pca = new PCA(60).fit(data.map(_.features))
+    val projected = data.map(p => p.copy(features = pca.transform(p.features)))
 
     // Split data into training (60%) and test (40%).
-    val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
+    val splits = projected.randomSplit(Array(0.6, 0.4), seed = 11L)
     val training = splits(0).cache()
     val test = splits(1)
+
+    df.registerTempTable("train")
+
+    val vn = "v1,v2,v4,v5,v6,v7,v8,v9,v10,v12,v13,v14,v21,v34,v40,v50,v62,v72,v114,v129";
+
+    val ftrAvgMap: Map[String, DataFrame] = vn.split(",").map { vi => (vi, sqlContext.sql(s"Select avg($vi) from train where $vi is not null")) }.toMap
+
+    //sqlData.foreach(x => println(x._1 + " avg is: " + x._2.map(t => t(0)).collect().foreach(print)))
+
+   
+
+    // Split data into training (60%) and test (40%).
+/*    val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
+    val training = splits(0).cache()
+    val test = splits(1)*/
 
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
       .setNumClasses(2)
       .run(training)
 
-      println("Threshold =" + model.getThreshold)
-      
+    println("Threshold =" + model.getThreshold)
+
     // Compute raw scores on the test set.
     val predictionAndLabels = test.map {
       case LabeledPoint(label, features) =>
         val prediction = model.clearThreshold().predict(features)
         (prediction, label)
     }
-    
+
     val predictionAndLabels2 = test.map {
       case LabeledPoint(label, features) =>
         val prediction = model.predict(features)
         (prediction, label)
     }
-    
+
     val metrics = new MulticlassMetrics(predictionAndLabels2)
     val precision = metrics.precision
     val recall = metrics.recall
@@ -208,20 +240,27 @@ object SimpleApp {
     val logloss = loss.collect().toSeq.reduce(_ + _)
     println(s"logloss= ${logloss / loss.count * (-1)}")
 
-    // scala class evaluation Get evaluation metrics.
-    
+    // scala class evaluation Get evaluation metrics. 
 
   }
 
   def convertToArray(seq: Seq[Any]): Array[Double] = {
     val seqDouble = for {
       item <- seq
-    } yield item.asInstanceOf[Double]
+      x = emptyCheck(item)
+    } yield x
     seqDouble.toArray
   }
 
   def calculateErrorFactor(pi: Double, yi: Double): Double = {
     yi * Math.log10(pi) + (1 - yi) * Math.log10(1 - pi)
+  }
+
+  def emptyCheck(n: Any): Double = {
+    n match {
+      case null => 10
+      case _    => n.asInstanceOf[Double]
+    }
   }
 
 }

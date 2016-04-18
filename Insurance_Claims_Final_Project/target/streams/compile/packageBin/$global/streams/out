@@ -1,1 +1,33 @@
-[0m[[0mdebug[0m] [0mJar uptodate: /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/insurance-claims-final-project_2.10-1.0.0-SNAPSHOT.jar[0m
+[0m[[0minfo[0m] [0mPackaging /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/insurance-claims-final-project_2.10-1.0.0-SNAPSHOT.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$5.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$7.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$7.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$8.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$8.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$11.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$11.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$6.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$6.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$9.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$9.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$4.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$12.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$12.class[0m
+[0m[[0mdebug[0m] [0m	claims[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp$$anonfun$10.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp$$anonfun$10.class[0m
+[0m[[0mdebug[0m] [0m	claims/SimpleApp.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/tanya/Documents/PARITOSH/SCALA/Project/git/CSYE7200-BigData-Eng-Systems-using-Scala/Insurance_Claims_Final_Project/target/scala-2.10/classes/claims/SimpleApp.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
