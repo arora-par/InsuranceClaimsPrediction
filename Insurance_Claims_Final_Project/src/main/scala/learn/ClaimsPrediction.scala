@@ -37,7 +37,7 @@ object ClaimsPrediction {
 
     val predictionAndLabels2 = test.map {
       case LabeledPoint(label, features) =>
-        val prediction = model.predict(features)
+        val prediction = model.setThreshold(0.6).predict(features)
         (prediction, label)
     }
 

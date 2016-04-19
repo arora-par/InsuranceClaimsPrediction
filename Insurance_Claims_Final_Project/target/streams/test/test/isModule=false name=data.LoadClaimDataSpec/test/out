@@ -1,27 +1,14 @@
 [0m[[0minfo[0m] [0m[32mLoadClaimDataSpec:[0m[0m
-[0m[[0minfo[0m] [0m[32memptyCheck(Any(13.33))[0m[0m
 [0m[[0minfo[0m] [0m[31mException encountered when attempting to run a suite with class name: data.LoadClaimDataSpec *** ABORTED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.lang.ExceptionInInitializerError:[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply$mcV$sp(LoadClaimDataSpec.scala:11)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply(LoadClaimDataSpec.scala:9)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply(LoadClaimDataSpec.scala:9)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.FlatSpecLike$$anon$1.apply(FlatSpecLike.scala:1647)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Suite$class.withFixture(Suite.scala:1122)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m  Cause: org.apache.spark.SparkException: A master URL must be set in your configuration[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.SparkContext.<init>(SparkContext.scala:401)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimData$.<init>(LoadClaimData.scala:15)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimData$.<clinit>(LoadClaimData.scala)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply$mcV$sp(LoadClaimDataSpec.scala:11)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply(LoadClaimDataSpec.scala:9)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec$$anonfun$1.apply(LoadClaimDataSpec.scala:9)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.lang.IllegalArgumentException: There is already an RpcEndpoint called LocalBackendEndpoint[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.rpc.netty.Dispatcher.registerRpcEndpoint(Dispatcher.scala:65)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.rpc.netty.NettyRpcEnv.setupEndpoint(NettyRpcEnv.scala:136)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.local.LocalBackend.start(LocalBackend.scala:126)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:144)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.SparkContext.<init>(SparkContext.scala:530)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec.beforeAll(LoadClaimDataSpec.scala:19)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.BeforeAndAfterAll$class.beforeAll(BeforeAndAfterAll.scala:187)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec.beforeAll(LoadClaimDataSpec.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.BeforeAndAfterAll$class.run(BeforeAndAfterAll.scala:253)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at data.LoadClaimDataSpec.run(LoadClaimDataSpec.scala:9)[0m[0m
 [0m[[0minfo[0m] [0m[31m  ...[0m[0m

@@ -1,0 +1,13 @@
+[0m[[0minfo[0m] [0m[32mClaimPredictionSpec:[0m[0m
+[0m[[0minfo[0m] [0m[32mcalculateErrorFactor(0.45, 1)[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.34678748622[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.07058107[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.2218487496163564[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case 0.0[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case 1.0[0m[0m
+[0m[[0minfo[0m] [0m[32mcalculateErrorFactor(0.45, 0)[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.2596373105057561[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.8239087409443187[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case -0.3979400086720376[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case 0.0[0m[0m
+[0m[[0minfo[0m] [0m[32m- should match case 1.0[0m[0m
