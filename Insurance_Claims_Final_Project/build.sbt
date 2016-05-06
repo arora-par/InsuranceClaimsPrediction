@@ -14,9 +14,7 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 //EclipseKeys.withSource := true
 
 libraryDependencies ++= Seq(
-	// "org.scala-lang.modules" %% "scala-xml" % "1.0.4",
 	"org.spire-math" %% "spire" % "0.10.1",
-	// "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4",
 	"org.apache.commons" % "commons-math3" % "3.6",
 	"org.scalatest" %% "scalatest" % scalaTestVersion % "test",
 	
@@ -24,7 +22,7 @@ libraryDependencies ++= Seq(
 	  "org.apache.spark" %% "spark-core" % "1.6.1",
 	  "org.apache.spark" %% "spark-sql" % "1.6.1",
 	  "org.apache.spark" %% "spark-mllib" % "1.6.1",
-	  // spark packages
+	// spark packages
 	  "com.databricks" %% "spark-csv" % "1.4.0"
 )
 

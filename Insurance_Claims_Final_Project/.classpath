@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/main/scala"/>
-	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/scala"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.spire-math/spire_2.10/jars/spire_2.10-0.10.1.jar"/>
@@ -135,7 +134,7 @@
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.parquet/parquet-hadoop/jars/parquet-hadoop-1.7.0.jar"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.parquet/parquet-format/jars/parquet-format-2.3.0-incubating.jar"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.parquet/parquet-jackson/jars/parquet-jackson-1.7.0.jar"/>
-	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.spark/spark-mllib_2.10/jars/spark-mllib_2.10-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.spark/spark-mllib_2.10/jars/spark-mllib_2.10-1.6.1.jar" sourcepath="/Users/tanya/Downloads/spark-1.6.1/mllib/src/main/scala"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.spark/spark-streaming_2.10/jars/spark-streaming_2.10-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/org.apache.spark/spark-graphx_2.10/jars/spark-graphx_2.10-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/tanya/.ivy2/cache/com.github.fommil.netlib/core/jars/core-1.1.2.jar"/>

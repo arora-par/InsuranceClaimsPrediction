@@ -70,7 +70,7 @@ object ClaimsPrediction {
   def calculateErrorFactor(pi: Double, yi: Double): Double = {
     if (pi == 0 || pi ==1 )
       0.0 // edge case values of predictions will not contribute to error
-    else (yi * Math.log10(pi) + (1 - yi) * Math.log10(1 - pi))
+    else (yi * Math.log(pi) + (1 - yi) * Math.log(1 - pi))
   }
 
 }
