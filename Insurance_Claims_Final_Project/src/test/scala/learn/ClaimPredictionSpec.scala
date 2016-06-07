@@ -13,20 +13,12 @@ class ClaimPredictionSpec extends FlatSpec with BeforeAndAfterAll with Matchers 
   implicit val efEq = new Equality[Double] {
     def areEqual(a: Double, b: Any): Boolean = math.abs(a-b.asInstanceOf[Double])<5E-3
   }
+  
+  val preal = 0.6
 
-  "calculateErrorFactor(0.45, 1)" should "match case -0.34678748622" in {   
-    val r = ClaimsPrediction.calculateErrorFactor(0.45, 1)
-    r should === (-0.34678748622)
-  }
-  
-  it should "match case -0.07058107" in {    
-    val r = ClaimsPrediction.calculateErrorFactor(0.85, 1)
-    r should === (-0.07058107)
-  }
-  
-  it should "match case -0.2218487496163564" in {   
-    val r = ClaimsPrediction.calculateErrorFactor(0.6, 1)
-    r should === (-0.2218487496163564)
+  "calculateErrorFactor(preal, 1)" should "match case Math.log(preal)" in {   
+    val r = ClaimsPrediction.calculateErrorFactor(preal, 1)
+    r should === (Math.log(preal))
   }
   
   
@@ -40,20 +32,11 @@ class ClaimPredictionSpec extends FlatSpec with BeforeAndAfterAll with Matchers 
     r should === (0.0)
   }  
   
-  "calculateErrorFactor(0.45, 0)" should "match case -0.2596373105057561" in {   
-    val r = ClaimsPrediction.calculateErrorFactor(0.45, 0)
-    r should === (-0.2596373105057561)
+  "calculateErrorFactor(preal, 0)" should "match case Math.log(1 - preal)" in {   
+    val r = ClaimsPrediction.calculateErrorFactor(preal, 0)
+    r should === (Math.log(1 - preal))
   }
-  
-  it should "match case -0.8239087409443187" in {   
-    val r = ClaimsPrediction.calculateErrorFactor(0.85, 0)
-    r should === (-0.8239087409443187)
-  }
-  
-  it should "match case -0.3979400086720376" in {    
-    val r = ClaimsPrediction.calculateErrorFactor(0.6, 0)
-    r should === (-0.3979400086720376)
-  }
+ 
   
   it should "match case 0.0" in {    
     val r = ClaimsPrediction.calculateErrorFactor(0.0, 0)

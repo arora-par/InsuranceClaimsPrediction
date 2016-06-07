@@ -4,7 +4,7 @@
 		module="insurance_claims_final_project-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160327190905"
+		publication="20160607124116"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

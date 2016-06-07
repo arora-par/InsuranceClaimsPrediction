@@ -3,7 +3,7 @@ name := "Insurance-Claims-Final-Project"
 
 version := "1.0.0-SNAPSHOT"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.10.6"
 
 val scalaTestVersion = "2.2.4"
 
